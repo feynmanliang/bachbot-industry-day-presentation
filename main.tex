@@ -114,24 +114,24 @@ Byrne\inst{1}}
 \end{alertblock}
 
 %----------------------------------------------------------------------------------------
-%	Background
+%	Data Representation
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Background}
-  Music is quantized to the nearest 16th beat (the smallest metric interval
-  occuring in Bach chorales) and quantized to the twelve note chromatic scale
-  used in Western music. We define two equivalent representations for music:
+\begin{block}{Data Representation}
+  We will explore how three different representations of music (the first two of
+  which are isomorphic) affect convergence and performance:
   \begin{itemize}
-    \item The \textbf{per-parts tuples} representation consists of four collections (one for
-      each voice) of note/rest and duration tuples. Note that durations between adjacent
-      tuples are non-uniform.
-    \item The \textbf{per-parts roll} consists of a categorical array $X_{p,t} \in V$
-      denoting the note played by part $p \in \{S,A,T,B\}$ at time $t \in \{1,2,\cdots,T\}$
-      To distinguish notes held from previous times from notes articulated at the current
+    \item \textbf{Per-part tuples} -- four collections (one for each voice) of
+      note/rest and duration tuples; note that the time interval between two
+      tuples is variable
+    \item \textbf{Per-part roll} -- categorical array $X_{p,t} \in V$
+      denoting note played by part $p \in \{S,A,T,B\}$ at time $t \in \{1,2,\cdots,T\}$;
+      to distinguish notes held from previous times from notes articulated at the current
       time, $Y_{p,t} \in \{0,1\}$ indicates if the note is articulated at time $t$.
-    \item The \textbf{piano roll} is like the per-parts roll except $X_{n,t} \in \{0,1\}$
-      denotes if note $n$ is played at time $t$. Note that this definition precludes
-      two parts playing the same note.
+    \item \textbf{Piano roll} -- similar to per-part roll except $X_{n,t} \in
+      \{0,1\}$ denotes if \textbf{note $n$} (rather than part $p$) is played at
+      time $t$; this represents cannot express two different parts playing the
+      same note
   \end{itemize}
 
 \end{block}
@@ -166,7 +166,7 @@ Byrne\inst{1}}
 \end{block}
 
 \begin{figure}
-  \includegraphics[width=0.8\linewidth]{LSTM3-chain.png}
+  \includegraphics[width=0.8\linewidth]{Figures/LSTM3-chain.png}
   \caption{Inside of an LSTM cell\cite{DBLP:conf/asru/2013}}
 \end{figure}
 
@@ -193,7 +193,7 @@ Byrne\inst{1}}
   \end{itemize}
 
   \begin{figure}
-    \includegraphics[width=0.8\linewidth]{bidir.png}
+    \includegraphics[width=0.8\linewidth]{Figures/bidir.png}
     \caption{Bidirectional RNN hidden states}
   \end{figure}
 
@@ -246,8 +246,8 @@ Byrne\inst{1}}
 \end{block}
 
 \begin{figure}
-  \includegraphics[width=0.95\linewidth]{biaxial.png}
-  \caption{Biaxial RNN Architecture\cite{colah:lstm}}
+  \includegraphics[width=0.95\linewidth]{Figures/biaxial.png}
+  \caption{Biaxial RNN architecture\cite{colah:lstm}}
 \end{figure}
 
 %----------------------------------------------------------------------------------------
@@ -262,15 +262,15 @@ Byrne\inst{1}}
 
 \begin{block}{Applications in Music Analysis}
   \begin{itemize}
-    \item MAP estimation: how would Bach complete this note/melody/chorale?
+    \item MAP : what would Bach do?
     \item Interpreting hidden state activations
-    \item Adversarial net: enhance ``Bach-ness'' of given input
+    \item Enhance ``Bach-ness'' of input
   \end{itemize}
 \end{block}
 
 \begin{figure}
-  \includegraphics[width=0.95\linewidth]{grid-lstm.png}
-  \caption{2D grid RNN Architecture\cite{DBLP:journals/corr/KalchbrennerDG15}}
+  \includegraphics[width=0.95\linewidth]{Figures/grid-lstm.png}
+  \caption{2D grid RNN architecture\cite{DBLP:journals/corr/KalchbrennerDG15}}
 \end{figure}
 
 %----------------------------------------------------------------------------------------
@@ -318,7 +318,7 @@ Byrne\inst{1}}
 
 \nocite{*} % Insert publications even if they are not cited in the poster
 \small{\bibliographystyle{unsrt}
-\bibliography{sample}\vspace{0.75in}}
+\bibliography{refs}}
 
 \end{block}
 
@@ -352,7 +352,7 @@ Cambridge with the donation of GPUs used for this research.}} \\
 \end{alertblock}
 
 \begin{center}
-  \includegraphics[width=0.5\linewidth]{Engineering.png}
+  \includegraphics[width=0.5\linewidth]{Figures/Engineering.png}
 \end{center}
 
 %----------------------------------------------------------------------------------------
